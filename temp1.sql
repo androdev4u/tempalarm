@@ -1,4 +1,4 @@
-USE temp1;
+USE temperature;
 
 CREATE TABLE IF NOT EXISTS `alarm` (
   `alarmno` int(11) NOT NULL AUTO_INCREMENT,
