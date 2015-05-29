@@ -1,0 +1,12 @@
+#!/bin/bash
+# needs setup sensors
+# digitemp results 
+# /usr/bin/digitemp -s/dev/ttyS0 $1 -a -q -c/root/.digitemprc -H" " -O" " -o"%s, %.2C, %Y-%m-%d %H:%M:%S"
+# 0, 23.69, 2015-05-29 14:49:48
+DATE=`date +"%Y-%m-%d %H:%M:%S"`
+
+# to use a bash variable in awk it must be excluded:  "'"$var"'" 
+/usr/bin/sensors | egrep \(Core\ 0\) | sed s/+//g | sed s/°C//g | awk '{ print "0, " $3 "0, " "'"$DATE"'" }'
+/usr/bin/sensors | egrep \(Core\ 1\) | sed s/+//g | sed s/°C//g | awk '{ print "1, " $3 "0, " "'"$DATE"'" }'
+
+
