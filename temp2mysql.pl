@@ -8,7 +8,7 @@
 ########################################################################################
 
 ####
-# needs gnokii connection ans mail alarm
+# ToD:  gnokii connection  for alarm
 ####
 
 ####
